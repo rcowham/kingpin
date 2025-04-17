@@ -75,9 +75,11 @@ func formatCmdUsage(app *ApplicationModel, cmd *CmdModel) string {
 func formatFlag(haveShort bool, flag *FlagModel) string {
 	flagString := ""
 	flagName := flag.Name
-	if flag.IsBoolFlag() {
-		flagName = "[no-]" + flagName
-	}
+	// Remove the ugly help [no-]no.flag - previous versions didn't do this!
+	// So pretend Bool() is negatable even if it isn't
+	// if flag.IsBoolFlag() {
+	// 	flagName = "[no-]" + flagName
+	// }
 	if flag.Short != 0 {
 		flagString += fmt.Sprintf("-%c, --%s", flag.Short, flagName)
 	} else {
