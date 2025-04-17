@@ -1,4 +1,4 @@
-module github.com/rcowham/kingpin/v2
+module github.com/rcowham/kingpin
 
 go 1.22
 
