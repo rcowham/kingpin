@@ -6,6 +6,8 @@
 
 **Why?** I no longer use Kingpin personally (I now use [kong](https://github.com/alecthomas/kong)). Rather than leave the project in a limbo of people filing issues and wondering why they're not being worked on, I believe this notice will more clearly set expectations.
 
+**This fork** github.com/rcowham/kingpin is same as alecthomas version but removes the ugly `--[no]` prefix in help output for Bool() flags. Cosmetic tweak only!
+
 # Kingpin - A Go (golang) command line and flag parser
 [![](https://godoc.org/github.com/alecthomas/kingpin?status.svg)](http://godoc.org/github.com/alecthomas/kingpin) [![CI](https://github.com/alecthomas/kingpin/actions/workflows/ci.yml/badge.svg)](https://github.com/alecthomas/kingpin/actions/workflows/ci.yml)
 
@@ -15,31 +17,37 @@
 
 <!-- MarkdownTOC -->
 
-- [Overview](#overview)
-- [Features](#features)
-- [User-visible changes between v1 and v2](#user-visible-changes-between-v1-and-v2)
-  - [Flags can be used at any point after their definition.](#flags-can-be-used-at-any-point-after-their-definition)
-  - [Short flags can be combined with their parameters](#short-flags-can-be-combined-with-their-parameters)
-- [API changes between v1 and v2](#api-changes-between-v1-and-v2)
-- [Versions](#versions)
-  - [V2 is the current stable version](#v2-is-the-current-stable-version)
-  - [V1 is the OLD stable version](#v1-is-the-old-stable-version)
-- [Change History](#change-history)
-- [Examples](#examples)
-  - [Simple Example](#simple-example)
-  - [Complex Example](#complex-example)
-- [Reference Documentation](#reference-documentation)
-  - [Displaying errors and usage information](#displaying-errors-and-usage-information)
-  - [Sub-commands](#sub-commands)
-  - [Custom Parsers](#custom-parsers)
-  - [Repeatable flags](#repeatable-flags)
-  - [Boolean Values](#boolean-values)
-  - [Default Values](#default-values)
-  - [Place-holders in Help](#place-holders-in-help)
-  - [Consuming all remaining arguments](#consuming-all-remaining-arguments)
-  - [Bash/ZSH Shell Completion](#bashzsh-shell-completion)
-  - [Supporting -h for help](#supporting--h-for-help)
-  - [Custom help](#custom-help)
+- [CONTRIBUTIONS ONLY](#contributions-only)
+- [Kingpin - A Go (golang) command line and flag parser](#kingpin---a-go-golang-command-line-and-flag-parser)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [User-visible changes between v1 and v2](#user-visible-changes-between-v1-and-v2)
+    - [Flags can be used at any point after their definition.](#flags-can-be-used-at-any-point-after-their-definition)
+    - [Short flags can be combined with their parameters](#short-flags-can-be-combined-with-their-parameters)
+  - [API changes between v1 and v2](#api-changes-between-v1-and-v2)
+  - [Versions](#versions)
+    - [V2 is the current stable version](#v2-is-the-current-stable-version)
+    - [V1 is the OLD stable version](#v1-is-the-old-stable-version)
+  - [Change History](#change-history)
+  - [Examples](#examples)
+    - [Simple Example](#simple-example)
+      - [Reading arguments from a file](#reading-arguments-from-a-file)
+    - [Complex Example](#complex-example)
+  - [Reference Documentation](#reference-documentation)
+    - [Displaying errors and usage information](#displaying-errors-and-usage-information)
+    - [Sub-commands](#sub-commands)
+    - [Custom Parsers](#custom-parsers)
+    - [Repeatable flags](#repeatable-flags)
+    - [Boolean values](#boolean-values)
+    - [Default Values](#default-values)
+    - [Place-holders in Help](#place-holders-in-help)
+    - [Consuming all remaining arguments](#consuming-all-remaining-arguments)
+    - [Bash/ZSH Shell Completion](#bashzsh-shell-completion)
+      - [Additional API](#additional-api)
+    - [Supporting -h for help](#supporting--h-for-help)
+    - [Custom help](#custom-help)
+      - [Default help template](#default-help-template)
+      - [Compact help template](#compact-help-template)
 
 <!-- /MarkdownTOC -->
 
